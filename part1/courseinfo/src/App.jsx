@@ -19,22 +19,23 @@
     )
   }
 
-  const Content= () => {
-
-    const part1 = 'Fundamentals of React'
-    const part2= 'Using props to pass data'
-    const part3= 'state of a component'
-    const exercise1= 10
-    const exercise2=7
-    const exercise3=14
+  const Content= (props) => {
 
     return(
-      <>
-    	  <Part part={part1} exercise={exercise1}/>
-    	  <Part part={part2} exercise={exercise2}/>
-     	  <Part part={part3} exercise={exercise3}/>
-        <Total exercise1={exercise1} exercise2={exercise2} exercise3={exercise3}/>
-      </>
+      <div>
+    	  <Part 
+        	part={props.part1} 
+          exercise={props.exercise1}
+        />
+    	  <Part 
+        	part={props.part2} 
+          exercise={props.exercise2}
+        />
+     	  <Part 
+        	part={props.part3} 
+          exercise={props.exercise3}
+        />
+      </div>
     )
   }
 
@@ -46,12 +47,31 @@
 
   const App= () =>{
     const course='Half Stack application developement'
+		const part1 ='Fundamentals of Reacts'
+    const part2 ='Using props to pass data'
+    const part3 ='state of component'
+    const exercise1 = 10
+    const exercise2 = 7
+    const exercise3 = 14
   	return (
     	
       <div>
 
         <Header course={course}/>
-        <Content/>
+        <Content 
+        	part1={part1} 
+        	part2={part2}
+        	part3={part3} 
+        	exercise1={exercise1} 
+        	exercise2={exercise2} 
+        	exercise3={exercise3}
+        />
+
+        <Total 
+        	exercise1={exercise1} 
+        	exercise2={exercise2} 
+        	exercise3={exercise3}
+        />
         
       </div>
     
